@@ -8,6 +8,9 @@ Based on these interpretations, we affirm that however unique, every entity on t
 
 This essence was translated into the underlying concept of our artworks; random parameters that share the same visual elements and use participant profiles to generate a unique pattern for each participant of the Design Inspire 2021 Conference. They denote that although quite different from one another, we are all connected in spirit and possess the capability to change ourselves and our planet for the better or worse.
 
+## Technical Info
+WIP
+
 ### Sample Gaia ID Card 
 Front Side | Back Side
 -- | --
