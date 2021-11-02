@@ -27,9 +27,7 @@ function setup() {
     // color("#37b5ac"), // kepel
     // color("#b16acf"), // purple
   ];
-}
 
-function draw() {
   background(14);
   
   populateDate();
@@ -44,7 +42,7 @@ function populateDate() {
   push();
   textAlign(CENTER, TOP);
   noStroke();
-  let fontColor = color("#29b85d");//color("#DEDEDE");
+  let fontColor = color("#969696");//color("#DEDEDE");
   
   textFont(roboto_bl);
   textSize(36);
@@ -90,7 +88,7 @@ function populateIDNumber() {
   
   textFont(roboto_bl);
   textSize(72);
-  fill(color("#29b85d"));
+  fill(color("#969696"));
   text("23113", 48, 60 + 36);
   pop();
 }
@@ -99,7 +97,7 @@ function popoulateUXGDetails() {
   push();
   textAlign(LEFT, TOP);
   noStroke();
-  let fontColor = color("#29b85d"); //color("#DEDEDE");
+  let fontColor = color("#DEDEDE");
   
   textFont(roboto_bl);
   textSize(26);

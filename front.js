@@ -26,15 +26,10 @@ function setup() {
 
   diColors = [
     color("#E3C766"), // yellow
-    color("#e19121"), // orange
+    // color("#e19121"), // orange
     color("#d9707f"), // pink
-    // color("#c93b3b"), // red
-
-    // color("#29b85d"), // green
-    // color("#37b5ac"), // kepel
+    color("#37b5ac"), // kepel
     // color("#b16acf"), // purple
-    // color("#5573f1"), // blue
-
     color("#dddddd"), // white
   ];
 
