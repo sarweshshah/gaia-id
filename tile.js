@@ -1,12 +1,13 @@
 class Tile {
-  constructor(_x, _y, _w, _h, _div) {
+  constructor(_x, _y, _w, _h, _div, _per) {
     this.div = _div;
 
     this.pos = createVector(_x, _y);
     this.size = createVector(_w, _h);
 
     // Colour of the line
-    this.col = random(diColors);
+    this.person = _per;
+    this.col = random(this.person.colors);
 
     // Probability factor : Determines the direction of line drawn
     this.prob = random(0, 1);
@@ -16,7 +17,7 @@ class Tile {
   }
 
   show() {
-    strokeWeight(constrain(20 / this.div, minStrokeWidth, 4));
+    strokeWeight(constrain(15 / this.div, minStrokeWidth, 4));
     strokeCap(SQUARE);
 
     this.showArc(this.prob);
@@ -82,14 +83,5 @@ class Tile {
       }
     }
     pop();
-  }
-}
-
-function keyTyped() {
-  if (key === "s") {
-    save();
-  } else if (key === "f") {
-    let fs = fullscreen();
-    fullscreen(!fs);
   }
 }
