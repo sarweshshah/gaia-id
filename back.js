@@ -1,104 +1,80 @@
-let diColors, quad;
-let tileArray;
-let namebanner_h = 250;
-
-function preload() {
-  // DIC Logo
-  dic_logo = loadImage("assets/dic-logo.png");
-
-  // Preloading Roboto font
-  roboto_bl = loadFont("fonts/Roboto-Black.ttf");
-  roboto_bold = loadFont("fonts/Roboto-Bold.ttf");
-  roboto_reg = loadFont("fonts/Roboto-Regular.ttf");
-  roboto_med = loadFont("fonts/Roboto-Medium.ttf");
-}
-
-function setup() {
-  createCanvas(800, 800 + namebanner_h);
-  // randomSeed(274329);
-
-  diColors = [
-    color("#E3C766"), // yellow
-    color("#e19121"), // orange
-    color("#d9707f"), // pink
-    // color("#c93b3b"), // red
-
-    // color("#29b85d"), // green
-    // color("#37b5ac"), // kepel
-    // color("#b16acf"), // purple
-  ];
-
+function drawBackCard(_counter) {
+  canvas = createCanvas(800, 800 + namebanner_h);
   background(14);
-  
-  populateDate();
-  populateText();
 
-  populateIDNumber();
-  popoulateUXGDetails();
-  populateLogos();
+  let person = personArray[_counter];
+
+  populateDate(person);
+  populateText(person);
+
+  populateIDNumber(person);
+  popoulateUXGDetails(person);
+  populateBackLogos();
 }
 
-function populateDate() {
+///////////////////////////////////////////////////////////////////////
+/////////////////////////. TEXT FUNCTIONS  ////////////////////////////
+
+function populateDate(person) {
   push();
   textAlign(CENTER, TOP);
   noStroke();
-  let fontColor = color("#969696");//color("#DEDEDE");
-  
+  let fontColor = person.colors[0]; //color("#DEDEDE");
+
   textFont(roboto_bl);
   textSize(36);
   fill(fontColor);
   text("Nov", width - 88, 60);
-  
-  
-  textFont(roboto_reg);
+
+  textFont(roboto_bl);
   textSize(56);
   fill(fontColor);
   text("20", width - 88, 96);
   pop();
 }
 
-function populateText() {
+function populateText(person) {
   push();
   noStroke();
   let fontColor = color("#DEDEDE");
-  
+
   textFont(roboto_reg);
   textSize(32);
   fill(fontColor);
-  text("You are a\n" + "Design Professional", 60, 260 + 60);
-  
+  text(person.roleToString(person.role), 60, 260 + 60);
+
   textFont(roboto_bl);
   textSize(72);
   fill(fontColor);
   textLeading(80);
-  text("Thoughtful.\nOriginal.\nCreative.", 60, 260 + 60 + 120);
+  text(person.qualities, 60, 260 + 60 + 120);
   pop();
 }
 
-function populateIDNumber() {
+function populateIDNumber(person) {
   push();
   textAlign(LEFT, TOP);
   noStroke();
   let fontColor = color("#DEDEDE");
-  
+
   textFont(roboto_bl);
   textSize(36);
   fill(fontColor);
   text("Your Unique ID No.", 48, 60);
-  
+
   textFont(roboto_bl);
   textSize(72);
-  fill(color("#969696"));
-  text("23113", 48, 60 + 36);
+  fill(person.colors[0]);
+  text(pad(person.id, 5), 48, 60 + 36);
   pop();
 }
 
-function popoulateUXGDetails() {
+function popoulateUXGDetails(person) {
   push();
   textAlign(LEFT, TOP);
   noStroke();
-  let fontColor = color("#DEDEDE");
-  
+  let fontColor = person.colors[0];
+
   textFont(roboto_bl);
   textSize(26);
   fill(fontColor);
@@ -107,11 +83,21 @@ function popoulateUXGDetails() {
   textFont(roboto_med);
   textSize(22);
   fill("#A9A9A9");
-  text("User Experience Group, ValueLabs\nHyderabad, India", 60, width + 100 + 32);
+  text(
+    "User Experience Group, ValueLabs\nHyderabad, India",
+    60,
+    width + 100 + 32
+  );
 
   pop();
 }
 
-function populateLogos() {
+function populateBackLogos() {
   image(dic_logo, width - 82 - 60, width + 48 / 2 + 76, 82, 100);
+}
+
+function pad(num, size) {
+  num = num.toString();
+  while (num.length < size) num = "0" + num;
+  return num;
 }
