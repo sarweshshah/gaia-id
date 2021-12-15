@@ -13,6 +13,10 @@ The program instanciates the grid class that creates a decaying arc structure ac
 
 The code was originally designed to be embedded in the frontend stack and showcase the collaterals dynamically. Later it was replaced with the generated images of the participant. A commented section in the `draw()` functions triggered the script to dynamically travel through the participant database and download id marked images in appropriate folders to be used as site assets. The code also prepares a json file to facilitate searching the assets of a particular participant.
 
+The generative process has been summarized in this image:
+
+![](https://github.com/sarweshshah/gaia-id/blob/main/sample/process.png)
+
 ### Sample Gaia ID Card 
 Front Side | Back Side
 -- | --
